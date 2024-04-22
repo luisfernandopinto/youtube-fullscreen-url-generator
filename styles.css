@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,7 +10,7 @@ body {
 #header {
     background-color: #545863;
     color: #fff;
-    padding: 20px 0;
+    padding: 20px 10px;
 }
 
 #header h1 {
@@ -20,10 +21,14 @@ body {
 p {
     font-size: 1em;
     color: #333;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .input-container {
     margin: 20px 0;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #youtube-url {
@@ -40,38 +45,40 @@ p {
     color: white;
     border: none;
     cursor: pointer;
-    font-weight: bold; /* Make the font bolder */
-    font-size: 1.1em; /* Increase the font size (adjust as necessary) */
-    border-radius: 5px; /* Rounded corners (adjust radius as necessary) */
+    font-weight: bold;
+    font-size: 1.1em;
+    border-radius: 5px;
 }
 
 #generate-btn:hover {
     background-color: #C44C2A;
 }
 
-
+/* Output Container Styles */
 #output-container {
+    flex-direction: column;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
     margin-top: 40px;
+    padding: 10px;
 }
 
 #output-label {
     font-size: 1em;
     font-weight: bold;
-    /* No need for margin-right as gap is used in the flex container */
 }
 
 #output-url-box {
     display: none;
+    margin-bottom: 10px;
     border: 1px solid #333;
     padding: 10px;
     background-color: #e8e8e8;
     word-wrap: break-word;
-    text-align: left;
-    max-width: calc(100% - 60px); /* Adjust if needed */
+    text-align: center;
+    max-width: calc(100% - 60px);
 }
 
 #copy-btn {
@@ -82,22 +89,29 @@ p {
     cursor: pointer;
 }
 
-.autoplay-container {
-    margin: 20px 0;
+/* Form Control Containers */
+/* Add margin-bottom property to both autoplay and related videos containers */
+.autoplay-container,
+.related-videos-container {
+    margin-bottom: 20px; 
     font-size: 1em;
+    /* Other shared styles... */
 }
 
-.autoplay-container label {
+.autoplay-container label,
+.related-videos-container label {
     margin-right: 5px;
 }
 
-.autoplay-container input[type=checkbox] {
+.autoplay-container input[type=checkbox],
+.related-videos-container input[type=checkbox] {
     width: 15px;
     height: 15px;
     cursor: pointer;
-    vertical-align: middle; /* Aligns checkbox vertically with text */
+    vertical-align: middle;
 }
 
+/* Footer Styles */
 .footer {
     background-color: #F9C846;
     color: #545863;
@@ -110,7 +124,23 @@ p {
     z-index: 100;
 }
 
+/* Media Query for Mobile Responsiveness */
 @media (max-width: 600px) {
+    #output-label {
+        font-size: 0.9em;
+    }
+
+    #output-url-box {
+        font-size: 0.8em;
+        overflow-wrap: break-word;
+        margin-bottom: 5px;
+    }
+
+    #copy-btn img {
+        width: 25px;
+        height: 25px;
+    }
+
     #youtube-url {
         width: 95%;
     }
